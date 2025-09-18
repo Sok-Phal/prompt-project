@@ -315,7 +315,6 @@ const AdminPanel = () => {
               </button>
             </div>
           </form>
-          </div>
         </div>
       )}
 
@@ -432,14 +431,10 @@ const AdminPanel = () => {
           <div className="text-center">
             <div className="text-2xl font-bold text-purple-600">
               {Math.round(
-                markets.length > 0 
-                  ? markets.reduce((avg, market) => {
-                      const marketAvg = market.items.length > 0 
-                        ? market.items.reduce((sum, item) => sum + item.price, 0) / market.items.length 
-                        : 0;
-                      return avg + marketAvg;
-                    }, 0) / markets.length 
-                  : 0
+                markets.reduce((avg, market) => {
+                  const marketAvg = market.items.reduce((sum, item) => sum + item.price, 0) / market.items.length;
+                  return avg + marketAvg;
+                }, 0) / markets.length || 0
               )}
             </div>
             <div className="text-sm text-gray-500">Avg Price (KHR)</div>
