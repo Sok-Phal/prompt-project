@@ -1,0 +1,18 @@
+{
+  "name": "essential-goods-price-tracker",
+  "version": "1.0.0",
+  "description": "A bilingual web application for tracking essential goods prices across markets in Southeast Asia",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd backend && npm run dev",
+    "client": "cd frontend && npm start",
+    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install"
+  },
+  "keywords": ["price-tracker", "bilingual", "cambodia", "essential-goods"],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
