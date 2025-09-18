@@ -9,6 +9,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f8fafc;
 }
 
 code {
@@ -19,22 +20,156 @@ code {
 /* Khmer font support */
 .khmer-text {
   font-family: 'Noto Sans Khmer', sans-serif;
+  font-weight: 400;
 }
 
-/* Custom scrollbar */
+/* Enhanced scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
+  background: #f1f5f9;
   border-radius: 4px;
 }
 
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
 ::-webkit-scrollbar-thumb:hover {
-  background: #a8a8a8;
+  background: #94a3b8;
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Utility classes */
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+.animate-pulse-slow {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Enhanced focus states */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+}
+
+/* Custom button styles */
+.btn-primary {
+  @apply bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 focus-ring;
+}
+
+.btn-secondary {
+  @apply bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-2 px-4 rounded-lg transition-colors duration-200 focus-ring;
+}
+
+.btn-success {
+  @apply bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 focus-ring;
+}
+
+.btn-danger {
+  @apply bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 focus-ring;
+}
+
+/* Card enhancements */
+.card {
+  @apply bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden;
+}
+
+.card-hover {
+  @apply hover:shadow-md transition-shadow duration-200;
+}
+
+/* Form enhancements */
+.form-input {
+  @apply w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200;
+}
+
+.form-input-error {
+  @apply border-red-300 focus:ring-red-500;
+}
+
+/* Table enhancements */
+.table-row-hover {
+  @apply hover:bg-gray-50 transition-colors duration-150;
+}
+
+/* Notification styles */
+.notification-success {
+  @apply bg-green-50 border border-green-200 text-green-800;
+}
+
+.notification-error {
+  @apply bg-red-50 border border-red-200 text-red-800;
+}
+
+.notification-info {
+  @apply bg-blue-50 border border-blue-200 text-blue-800;
+}
+
+/* Loading spinner */
+.spinner {
+  @apply animate-spin rounded-full border-2 border-gray-300 border-t-blue-600;
+}
+
+/* Price highlighting */
+.price-low {
+  @apply text-green-600 font-semibold;
+}
+
+.price-high {
+  @apply text-red-600 font-semibold;
+}
+
+.price-medium {
+  @apply text-gray-700;
+}
+
+/* Gradient backgrounds */
+.gradient-bg {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.gradient-bg-light {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
 }
