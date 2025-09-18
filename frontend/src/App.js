@@ -20,9 +20,9 @@ function App() {
 
   return (
     <Router>
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-base-100">
         <Navbar onToggleLanguage={toggleLanguage} />
-        <main className="container mx-auto px-4 py-8">
+        <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/comparison" element={<MarketComparison />} />
@@ -30,7 +30,7 @@ function App() {
             <Route path="/admin" element={<AdminPanel />} />
           </Routes>
         </main>
-        <footer className="bg-gray-800 text-white py-4 mt-12">
+        <footer className="bg-neutral text-white py-4 mt-12">
           <div className="container mx-auto px-4 text-center">
             <p className="text-sm">
               {i18n.t('footer')}
